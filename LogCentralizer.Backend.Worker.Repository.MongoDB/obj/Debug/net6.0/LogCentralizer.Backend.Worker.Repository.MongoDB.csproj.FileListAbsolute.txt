@@ -1,0 +1,12 @@
+C:\Users\Administrator\Desktop\New folder\LogCentralizer.Backend.Worker\LogCentralizer.Backend.Worker.Repository.MongoDB\bin\Debug\net6.0\LogCentralizer.Backend.Worker.Repository.MongoDB.deps.json
+C:\Users\Administrator\Desktop\New folder\LogCentralizer.Backend.Worker\LogCentralizer.Backend.Worker.Repository.MongoDB\bin\Debug\net6.0\LogCentralizer.Backend.Worker.Repository.MongoDB.dll
+C:\Users\Administrator\Desktop\New folder\LogCentralizer.Backend.Worker\LogCentralizer.Backend.Worker.Repository.MongoDB\bin\Debug\net6.0\LogCentralizer.Backend.Worker.Repository.MongoDB.pdb
+C:\Users\Administrator\Desktop\New folder\LogCentralizer.Backend.Worker\LogCentralizer.Backend.Worker.Repository.MongoDB\obj\Debug\net6.0\LogCentralizer.Backend.Worker.Repository.MongoDB.csproj.AssemblyReference.cache
+C:\Users\Administrator\Desktop\New folder\LogCentralizer.Backend.Worker\LogCentralizer.Backend.Worker.Repository.MongoDB\obj\Debug\net6.0\LogCentralizer.Backend.Worker.Repository.MongoDB.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Administrator\Desktop\New folder\LogCentralizer.Backend.Worker\LogCentralizer.Backend.Worker.Repository.MongoDB\obj\Debug\net6.0\LogCentralizer.Backend.Worker.Repository.MongoDB.AssemblyInfoInputs.cache
+C:\Users\Administrator\Desktop\New folder\LogCentralizer.Backend.Worker\LogCentralizer.Backend.Worker.Repository.MongoDB\obj\Debug\net6.0\LogCentralizer.Backend.Worker.Repository.MongoDB.AssemblyInfo.cs
+C:\Users\Administrator\Desktop\New folder\LogCentralizer.Backend.Worker\LogCentralizer.Backend.Worker.Repository.MongoDB\obj\Debug\net6.0\LogCentralizer.Backend.Worker.Repository.MongoDB.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Desktop\New folder\LogCentralizer.Backend.Worker\LogCentralizer.Backend.Worker.Repository.MongoDB\obj\Debug\net6.0\LogCentralizer.Backend.Worker.Repository.MongoDB.dll
+C:\Users\Administrator\Desktop\New folder\LogCentralizer.Backend.Worker\LogCentralizer.Backend.Worker.Repository.MongoDB\obj\Debug\net6.0\refint\LogCentralizer.Backend.Worker.Repository.MongoDB.dll
+C:\Users\Administrator\Desktop\New folder\LogCentralizer.Backend.Worker\LogCentralizer.Backend.Worker.Repository.MongoDB\obj\Debug\net6.0\LogCentralizer.Backend.Worker.Repository.MongoDB.pdb
+C:\Users\Administrator\Desktop\New folder\LogCentralizer.Backend.Worker\LogCentralizer.Backend.Worker.Repository.MongoDB\obj\Debug\net6.0\ref\LogCentralizer.Backend.Worker.Repository.MongoDB.dll
