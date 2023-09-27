@@ -86,7 +86,11 @@
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "D:\\Lotus\\LogCentralizer.Backend.Worker\\LogCentralizer.Backend.Worker.Domain\\LogCentralizer.Backend.Worker.Domain.csproj": {
+                "projectPath": "D:\\Lotus\\LogCentralizer.Backend.Worker\\LogCentralizer.Backend.Worker.Domain\\LogCentralizer.Backend.Worker.Domain.csproj"
+              }
+            }
           }
         },
         "warningProperties": {

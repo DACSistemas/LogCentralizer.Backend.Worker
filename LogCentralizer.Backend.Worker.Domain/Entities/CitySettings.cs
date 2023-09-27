@@ -2,13 +2,11 @@
 {
     public class CitySettings
     {
-        public const string KeyName = "CitySettings";
         public string CityName { get; set; } = null!;
         public string QueueName { get; set; } = null!;
-        public string RabbitMqDomain { get; set; } = null!;
-        public int ActiveWorkerInterval { get; set; }
         public uint MessageCount { get; set; }
         public uint ConsumerCount { get; set; }
+        public RabbitMqSettings RabbitMqSettings { get; set; } = new();
         public MongoDbSettings MongoDbSettings { get; set; } = new();
     }
 }

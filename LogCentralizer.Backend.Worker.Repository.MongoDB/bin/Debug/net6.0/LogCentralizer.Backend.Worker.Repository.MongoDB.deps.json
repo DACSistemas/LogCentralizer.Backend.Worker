@@ -8,6 +8,7 @@
     ".NETCoreApp,Version=v6.0": {
       "LogCentralizer.Backend.Worker.Repository.MongoDB/1.0.0": {
         "dependencies": {
+          "LogCentralizer.Backend.Worker.Domain": "1.0.0",
           "MongoDB.Driver": "2.21.0",
           "Newtonsoft.Json": "13.0.3"
         },
@@ -171,6 +172,11 @@
             "fileVersion": "0.6.2.0"
           }
         }
+      },
+      "LogCentralizer.Backend.Worker.Domain/1.0.0": {
+        "runtime": {
+          "LogCentralizer.Backend.Worker.Domain.dll": {}
+        }
       }
     }
   },
@@ -312,6 +318,11 @@
       "sha512": "sha512-jPao/LdUNLUz8rn3H1D8W7wQbZsRZM0iayvWI4xGejJg3XJHT56gcmYdgmCGPdJF1UEBqUjucCRrFB+4HbJsbw==",
       "path": "zstdsharp.port/0.6.2",
       "hashPath": "zstdsharp.port.0.6.2.nupkg.sha512"
+    },
+    "LogCentralizer.Backend.Worker.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     }
   }
 }

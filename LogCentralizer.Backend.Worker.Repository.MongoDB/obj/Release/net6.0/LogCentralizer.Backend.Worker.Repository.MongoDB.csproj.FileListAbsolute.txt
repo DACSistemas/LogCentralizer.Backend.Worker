@@ -1,0 +1,15 @@
+D:\Lotus\LogCentralizer.Backend.Worker\LogCentralizer.Backend.Worker.Repository.MongoDB\bin\Release\net6.0\LogCentralizer.Backend.Worker.Repository.MongoDB.deps.json
+D:\Lotus\LogCentralizer.Backend.Worker\LogCentralizer.Backend.Worker.Repository.MongoDB\bin\Release\net6.0\LogCentralizer.Backend.Worker.Repository.MongoDB.dll
+D:\Lotus\LogCentralizer.Backend.Worker\LogCentralizer.Backend.Worker.Repository.MongoDB\bin\Release\net6.0\LogCentralizer.Backend.Worker.Repository.MongoDB.pdb
+D:\Lotus\LogCentralizer.Backend.Worker\LogCentralizer.Backend.Worker.Repository.MongoDB\bin\Release\net6.0\LogCentralizer.Backend.Worker.Domain.dll
+D:\Lotus\LogCentralizer.Backend.Worker\LogCentralizer.Backend.Worker.Repository.MongoDB\bin\Release\net6.0\LogCentralizer.Backend.Worker.Domain.pdb
+D:\Lotus\LogCentralizer.Backend.Worker\LogCentralizer.Backend.Worker.Repository.MongoDB\obj\Release\net6.0\LogCentralizer.Backend.Worker.Repository.MongoDB.csproj.AssemblyReference.cache
+D:\Lotus\LogCentralizer.Backend.Worker\LogCentralizer.Backend.Worker.Repository.MongoDB\obj\Release\net6.0\LogCentralizer.Backend.Worker.Repository.MongoDB.GeneratedMSBuildEditorConfig.editorconfig
+D:\Lotus\LogCentralizer.Backend.Worker\LogCentralizer.Backend.Worker.Repository.MongoDB\obj\Release\net6.0\LogCentralizer.Backend.Worker.Repository.MongoDB.AssemblyInfoInputs.cache
+D:\Lotus\LogCentralizer.Backend.Worker\LogCentralizer.Backend.Worker.Repository.MongoDB\obj\Release\net6.0\LogCentralizer.Backend.Worker.Repository.MongoDB.AssemblyInfo.cs
+D:\Lotus\LogCentralizer.Backend.Worker\LogCentralizer.Backend.Worker.Repository.MongoDB\obj\Release\net6.0\LogCentralizer.Backend.Worker.Repository.MongoDB.csproj.CoreCompileInputs.cache
+D:\Lotus\LogCentralizer.Backend.Worker\LogCentralizer.Backend.Worker.Repository.MongoDB\obj\Release\net6.0\LogCentralizer.Backend.Worker.Repository.MongoDB.csproj.CopyComplete
+D:\Lotus\LogCentralizer.Backend.Worker\LogCentralizer.Backend.Worker.Repository.MongoDB\obj\Release\net6.0\LogCentralizer.Backend.Worker.Repository.MongoDB.dll
+D:\Lotus\LogCentralizer.Backend.Worker\LogCentralizer.Backend.Worker.Repository.MongoDB\obj\Release\net6.0\refint\LogCentralizer.Backend.Worker.Repository.MongoDB.dll
+D:\Lotus\LogCentralizer.Backend.Worker\LogCentralizer.Backend.Worker.Repository.MongoDB\obj\Release\net6.0\LogCentralizer.Backend.Worker.Repository.MongoDB.pdb
+D:\Lotus\LogCentralizer.Backend.Worker\LogCentralizer.Backend.Worker.Repository.MongoDB\obj\Release\net6.0\ref\LogCentralizer.Backend.Worker.Repository.MongoDB.dll

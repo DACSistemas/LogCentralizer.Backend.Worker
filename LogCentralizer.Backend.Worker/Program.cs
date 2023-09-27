@@ -1,10 +1,8 @@
-using LogCentralizer.Backend.Repository.Worker.MongoDB.Entities;
 using LogCentralizer.Backend.Worker;
 using LogCentralizer.Backend.Worker.Domain.Entities;
 using LogCentralizer.Backend.Worker.Extensions;
+using LogCentralizer.Backend.Worker.IoC;
 using LogCentralizer.Backend.Worker.Providers;
-using LogCentralizer.Backend.Worker.Repository.MongoDB.Repositories;
-using LogCentralizer.BackEnd.Worker.Repository.MongoDB.Repositories;
 using MassTransit;
 using MongoDB.Driver;
 using Serilog;
@@ -23,23 +21,27 @@ IHost host = Host.CreateDefaultBuilder(args)
 
         services.Configure<List<CitySettings>>(configuration.GetSection("CitySettingsList"));
 
-        var citySettingsList = configuration.GetSection("CitySettingsList").Get<List<CitySettings>>();
-        CitySettingsProvider.AllCitySettings.AddRange(citySettingsList);
-       
-        //InitializeLogRepositories(citySettingsList);
-        
+        var citySettingsList = configuration.GetSection("CitySettingsList").Get<Dictionary<string, CitySettings>>();
+        CitySettingsProvider.AllCitySettings = citySettingsList;
+
         services.AddMassTransit(x =>
         {
+            x.AddConsumer<LogConsumer>();
             x.UsingRabbitMq((context, cfg) =>
                 {
                     foreach (var citySettings in citySettingsList)
                     {
-                        cfg.ReceiveEndpoint(citySettings.QueueName, e =>
+                        cfg.Host(citySettings.Value.RabbitMqSettings.Host, "/", h =>
                         {
-                            e.Consumer<LogConsumer>();
+                            h.Username(citySettings.Value.RabbitMqSettings.User);
+                            h.Password(citySettings.Value.RabbitMqSettings.Password);
+                        });
+                        cfg.ReceiveEndpoint(citySettings.Key, e =>
+                        {
+                            e.Consumer<LogConsumer>(context);
                         });
 
-                        LogCitySettings(citySettings);
+                       
                     }
                     Thread.Sleep(2000);
 
@@ -51,9 +53,9 @@ IHost host = Host.CreateDefaultBuilder(args)
 
             x.SetJobConsumerOptions();
             x.SetKebabCaseEndpointNameFormatter();
-            
+
         });
-                        
+
         services.AddOptions<MassTransitHostOptions>()
             .Configure(options =>
             {
@@ -63,43 +65,28 @@ IHost host = Host.CreateDefaultBuilder(args)
             });
 
         services.AddOptions<HostOptions>()
-            .Configure(options => options.ShutdownTimeout = TimeSpan.FromMinutes(1));
-
+        .Configure(options => options.ShutdownTimeout = TimeSpan.FromMinutes(1));
+        
+        ConfigureMongoDbService.Register(services, context.Configuration);
         //services.AddHostedService<Worker>();
+
+        LogCitySettings(citySettingsList);
 
     }).UseSerilog()
     .Build();
 
-async void LogCitySettings(CitySettings citySettings)
+async void LogCitySettings(Dictionary<string, CitySettings> citySettings)
 {
-    Log.Information("|--------------------------------------------------------------------------|");
-    Log.Information("| City Name: {CityName}{space}|", citySettings.CityName, String.Concat(Enumerable.Repeat(" ", (62 - citySettings.CityName.Count()))));
-    Log.Information("| RabbitMQ queue name: {QueueName}{space}|", citySettings.QueueName, String.Concat(Enumerable.Repeat(" ", (52 - citySettings.QueueName.Count()))));
-    //Log.Information("| RabbitMQ Messages in queue: {MessageCount}{space}|", citySettings.MessageCount, String.Concat(Enumerable.Repeat(" ", (45 - citySettings.MessageCount.ToString().Length))));
-    //Log.Information("| RabbitMQ Consumers: {ConsumerCount}{space}|", citySettings.ConsumerCount, String.Concat(Enumerable.Repeat(" ", (53 - citySettings.ConsumerCount.ToString().Length))));
-    Log.Information("|--------------------------------------------------------------------------|");
-}
-
-
-Dictionary<string, IMongoRepository<FiveMLog>> InitializeLogRepositories(List<CitySettings> citiesSettings)
-{
-    var logRepositories = new Dictionary<string, IMongoRepository<FiveMLog>>();
-
-    foreach (var citySettings in citiesSettings)
+    foreach (var settings in citySettings)
     {
-        // Configurar uma instância de IMongoRepository para cada configuração de MongoDB
-        var settings = citySettings.MongoDbSettings;
-        var client = new MongoClient(settings.ConnectionString);
-        var database = client.GetDatabase(settings.DatabaseName);
-
-        var repository = new MongoRepository<FiveMLog>(database);
-
-        // Adicionar o repositório à lista de repositórios
-        logRepositories[citySettings.CityName] = repository;
+        Log.Information("|--------------------------------------------------------------------------|");
+        Log.Information("| City Name: {CityName}{space}|", settings.Value.CityName, String.Concat(Enumerable.Repeat(" ", (62 - settings.Value.CityName.Count()))));
+        Log.Information("| RabbitMQ queue name: {QueueName}{space}|", settings.Key, String.Concat(Enumerable.Repeat(" ", (52 - settings.Key.Count()))));
+        //Log.Information("| RabbitMQ Messages in queue: {MessageCount}{space}|", citySettings.MessageCount, String.Concat(Enumerable.Repeat(" ", (45 - citySettings.MessageCount.ToString().Length))));
+        //Log.Information("| RabbitMQ Consumers: {ConsumerCount}{space}|", citySettings.ConsumerCount, String.Concat(Enumerable.Repeat(" ", (53 - citySettings.ConsumerCount.ToString().Length))));
+        Log.Information("|--------------------------------------------------------------------------|");
     }
-
-    return logRepositories;
+    
 }
-
 
 await host.RunAsync();

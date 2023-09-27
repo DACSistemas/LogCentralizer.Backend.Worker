@@ -750,6 +750,7 @@
       },
       "LogCentralizer.Backend.Worker.Repository.MongoDB/1.0.0": {
         "dependencies": {
+          "LogCentralizer.Backend.Worker.Domain": "1.0.0",
           "MongoDB.Driver": "2.21.0",
           "Newtonsoft.Json": "13.0.3"
         },

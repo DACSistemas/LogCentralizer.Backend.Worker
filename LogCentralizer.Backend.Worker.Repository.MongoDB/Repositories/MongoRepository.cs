@@ -1,22 +1,34 @@
 ﻿using LogCentralizer.Backend.Repository.Worker.MongoDB.Entities;
+using LogCentralizer.Backend.Worker.Providers;
 using LogCentralizer.Backend.Worker.Repository.MongoDB.Collections;
 using LogCentralizer.Backend.Worker.Repository.MongoDB.Repositories;
-using MongoDB.Bson;
 using MongoDB.Driver;
-using System.Linq.Expressions;
 
 namespace LogCentralizer.BackEnd.Worker.Repository.MongoDB.Repositories
 {
     public class MongoRepository<TDocument> : IMongoRepository<TDocument> where TDocument : IDocument
     {
-        private readonly IMongoCollection<TDocument> _collection;
-
-
-        public MongoRepository(IMongoDatabase database)
+        private readonly Dictionary<string, IMongoCollection<TDocument>> mongoCollections = new();
+        private readonly object _lock = new object();
+        public MongoRepository()
         {
-            _collection = database.GetCollection<TDocument>(GetCollectionName(typeof(TDocument)));
-        }
+            foreach (var citySettings in CitySettingsProvider.AllCitySettings)
+            {
+                var database = new MongoClient(citySettings.Value.MongoDbSettings.ConnectionString).GetDatabase(citySettings.Value.MongoDbSettings.DatabaseName);
+                var _collection = database.GetCollection<TDocument>(GetCollectionName(typeof(TDocument)));
 
+                mongoCollections.Add(citySettings.Key, _collection);
+
+            }
+        }
+        public IMongoCollection<TDocument> GetCollection(string queueName)
+        {
+            lock (_lock)
+            {
+                var mongoCollection = mongoCollections[queueName];
+                return mongoCollection;
+            }
+        }
         private protected string GetCollectionName(Type documentType)
         {
             return ((BsonCollectionAttribute)documentType.GetCustomAttributes(
@@ -24,136 +36,24 @@ namespace LogCentralizer.BackEnd.Worker.Repository.MongoDB.Repositories
                     true)
                 .FirstOrDefault())?.CollectionName;
         }
-
-        public virtual IQueryable<TDocument> AsQueryable()
+       
+        public virtual void InsertOne(TDocument document, string cityName)
         {
-            return _collection.AsQueryable();
-        }
-
-        public virtual IEnumerable<TDocument> FilterBy(
-            Expression<Func<TDocument, bool>> filterExpression)
-        {
-            return _collection.Find(filterExpression).ToEnumerable();
-        }
-
-        public virtual IEnumerable<TProjected> FilterBy<TProjected>(
-            Expression<Func<TDocument, bool>> filterExpression,
-            Expression<Func<TDocument, TProjected>> projectionExpression)
-        {
-            return _collection.Find(filterExpression).Project(projectionExpression).ToEnumerable();
-        }
-
-        public virtual TDocument FindOne(Expression<Func<TDocument, bool>> filterExpression)
-        {
-            return _collection.Find(filterExpression).FirstOrDefault();
-        }
-
-        public virtual Task<TDocument> FindOneAsync(Expression<Func<TDocument, bool>> filterExpression)
-        {
-            return Task.Run(() => _collection.Find(filterExpression).FirstOrDefaultAsync());
-        }
-
-        public virtual TDocument FindById(string id)
-        {
-            var objectId = new ObjectId(id);
-            var filter = Builders<TDocument>.Filter.Eq(doc => doc.Id, objectId);
-            return _collection.Find(filter).SingleOrDefault();
-        }
-
-        public virtual Task<TDocument> FindByIdAsync(string id)
-        {
-            return Task.Run(() =>
+            lock (_lock)
             {
-                var objectId = new ObjectId(id);
-                var filter = Builders<TDocument>.Filter.Eq(doc => doc.Id, objectId);
-                return _collection.Find(filter).SingleOrDefaultAsync();
-            });
+                var _collection = mongoCollections[cityName];
+                _collection.InsertOne(document);
+            }
         }
 
-
-        public virtual void InsertOne(TDocument document)
+        public virtual Task InsertOneAsync(TDocument document, string cityName)
         {
-            _collection.InsertOne(document);
-        }
-        public virtual async Task<long> CountDocumentsAsync()
-        {
-            var result = await _collection.Find(_ => true).CountDocumentsAsync();
-            return result;
-        }
-
-        public virtual Task InsertOneAsync(TDocument document)
-        {
-            return Task.Run(() => _collection.InsertOneAsync(document));
-        }
-
-        public void InsertMany(ICollection<TDocument> documents)
-        {
-            _collection.InsertMany(documents);
-        }
-
-
-        public virtual async Task InsertManyAsync(ICollection<TDocument> documents)
-        {
-            await _collection.InsertManyAsync(documents);
-        }
-
-        public void ReplaceOne(TDocument document)
-        {
-            var filter = Builders<TDocument>.Filter.Eq(doc => doc.Id, document.Id);
-            //var update = Builders<TDocument>.Update.Inc(i=> i.RegisterCounter, +1);
-            
-            _collection.FindOneAndReplace(filter, document);
-            //_collection.FindOneAndUpdate(filter, update);
-        }
-
-        public virtual async Task ReplaceOneAsync(TDocument document)
-        {
-            var filter = Builders<TDocument>.Filter.Eq(doc => doc.Id, document.Id);
-            await _collection.FindOneAndReplaceAsync(filter, document);
-        }
-
-        public void DeleteOne(Expression<Func<TDocument, bool>> filterExpression)
-        {
-            _collection.FindOneAndDelete(filterExpression);
-        }
-
-        public Task DeleteOneAsync(Expression<Func<TDocument, bool>> filterExpression)
-        {
-            return Task.Run(() => _collection.FindOneAndDeleteAsync(filterExpression));
-        }
-
-        public void DeleteById(string id)
-        {
-            var objectId = new ObjectId(id);
-            var filter = Builders<TDocument>.Filter.Eq(doc => doc.Id, objectId);
-            _collection.FindOneAndDelete(filter);
-        }
-
-        public Task DeleteByIdAsync(string id)
-        {
-            return Task.Run(() =>
+            lock (_lock)
             {
-                var objectId = new ObjectId(id);
-                var filter = Builders<TDocument>.Filter.Eq(doc => doc.Id, objectId);
-                _collection.FindOneAndDeleteAsync(filter);
-            });
+                var _collection = mongoCollections[cityName];
+                return Task.Run(() => _collection.InsertOneAsync(document));
+            }
         }
-
-        public void DeleteMany(Expression<Func<TDocument, bool>> filterExpression)
-        {
-            _collection.DeleteMany(filterExpression);
-        }
-
-        public Task DeleteManyAsync(Expression<Func<TDocument, bool>> filterExpression)
-        {
-            return Task.Run(() => _collection.DeleteManyAsync(filterExpression));
-        }
-
-        public long CountDocuments()
-        {
-            var result = _collection.Find(_ => true).CountDocuments();
-            return result;
-        }
-
+       
     }
 }

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "hhTAU2ISrFcFmqlHwwdBQj34GM0OnTH4V5urJWRHQMKGMuXm95Ld9s1RhrnyktkSiJJboGQr7tUsPcdxiIkE0Q==",
+  "dgSpecHash": "W5+DR9voEKFYKXm0uitDUCSHZSUyrMRhxcpp3dvwp+V3YypUgKsAJvvRKTDU1kTSBqFWcdiYtIpF3GslPWP9bg==",
   "success": true,
   "projectFilePath": "D:\\Lotus\\LogCentralizer.Backend.Worker\\LogCentralizer.Backend.Worker.Repository.MongoDB\\LogCentralizer.Backend.Worker.Repository.MongoDB.csproj",
   "expectedPackageFiles": [
