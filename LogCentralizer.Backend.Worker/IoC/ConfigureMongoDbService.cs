@@ -1,6 +1,6 @@
 ﻿using LogCentralizer.Backend.Worker.Repository.MongoDB.Repositories;
-using LogCentralizer.BackEnd.Worker.Repository.MongoDB.Repositories;
-using LogCentralizer.BackEnd.Worker.Repository.MongoDB.Settings;
+using LogCentralizer.BackEnd.Worker.Repositories;
+using LogCentralizer.BackEnd.Worker.Repository.Settings;
 using Microsoft.Extensions.Options;
 
 namespace LogCentralizer.Backend.Worker.IoC

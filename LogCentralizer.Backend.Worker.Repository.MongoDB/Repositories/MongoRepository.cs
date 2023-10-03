@@ -4,7 +4,7 @@ using LogCentralizer.Backend.Worker.Repository.MongoDB.Collections;
 using LogCentralizer.Backend.Worker.Repository.MongoDB.Repositories;
 using MongoDB.Driver;
 
-namespace LogCentralizer.BackEnd.Worker.Repository.MongoDB.Repositories
+namespace LogCentralizer.BackEnd.Worker.MongoDB.Repositories
 {
     public class MongoRepository<TDocument> : IMongoRepository<TDocument> where TDocument : IDocument
     {

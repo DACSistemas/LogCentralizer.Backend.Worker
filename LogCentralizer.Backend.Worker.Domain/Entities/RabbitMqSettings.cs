@@ -1,6 +1,6 @@
 ﻿namespace LogCentralizer.Backend.Worker.Domain.Entities
 {
-    public class RabbitMqSettings
+    public record RabbitMqSettings
     {
         public string Host { get; set; }
         public string User { get; set; }

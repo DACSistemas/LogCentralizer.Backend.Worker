@@ -61,9 +61,7 @@ D:\Lotus\LogCentralizer.Backend.Worker\LogCentralizer.Backend.Worker\bin\Release
 D:\Lotus\LogCentralizer.Backend.Worker\LogCentralizer.Backend.Worker\bin\Release\net6.0\runtimes\win\native\mongocrypt.dll
 D:\Lotus\LogCentralizer.Backend.Worker\LogCentralizer.Backend.Worker\bin\Release\net6.0\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
 D:\Lotus\LogCentralizer.Backend.Worker\LogCentralizer.Backend.Worker\bin\Release\net6.0\LogCentralizer.Backend.Worker.Domain.dll
-D:\Lotus\LogCentralizer.Backend.Worker\LogCentralizer.Backend.Worker\bin\Release\net6.0\LogCentralizer.Backend.Worker.Repository.MongoDB.dll
 D:\Lotus\LogCentralizer.Backend.Worker\LogCentralizer.Backend.Worker\bin\Release\net6.0\LogCentralizer.Backend.Worker.Domain.pdb
-D:\Lotus\LogCentralizer.Backend.Worker\LogCentralizer.Backend.Worker\bin\Release\net6.0\LogCentralizer.Backend.Worker.Repository.MongoDB.pdb
 D:\Lotus\LogCentralizer.Backend.Worker\LogCentralizer.Backend.Worker\obj\Release\net6.0\LogCentralizer.Backend.Worker.csproj.AssemblyReference.cache
 D:\Lotus\LogCentralizer.Backend.Worker\LogCentralizer.Backend.Worker\obj\Release\net6.0\LogCentralizer.Backend.Worker.GeneratedMSBuildEditorConfig.editorconfig
 D:\Lotus\LogCentralizer.Backend.Worker\LogCentralizer.Backend.Worker\obj\Release\net6.0\LogCentralizer.Backend.Worker.AssemblyInfoInputs.cache

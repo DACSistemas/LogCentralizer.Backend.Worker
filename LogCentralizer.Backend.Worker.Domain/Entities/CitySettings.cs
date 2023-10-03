@@ -1,4 +1,6 @@
-﻿namespace LogCentralizer.Backend.Worker.Domain.Entities
+﻿using LogCentralizer.BackEnd.Worker.Repository.Settings;
+
+namespace LogCentralizer.Backend.Worker.Domain.Entities
 {
     public class CitySettings
     {

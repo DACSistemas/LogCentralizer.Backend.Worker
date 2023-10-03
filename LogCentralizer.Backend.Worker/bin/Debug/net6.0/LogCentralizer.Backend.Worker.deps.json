@@ -9,12 +9,12 @@
       "LogCentralizer.Backend.Worker/1.0.0": {
         "dependencies": {
           "LogCentralizer.Backend.Worker.Domain": "1.0.0",
-          "LogCentralizer.Backend.Worker.Repository.MongoDB": "1.0.0",
           "MassTransit": "8.1.0",
           "MassTransit.MongoDb": "8.1.0",
           "MassTransit.RabbitMQ": "8.1.0",
           "Microsoft.Extensions.Configuration.Json": "7.0.0",
           "Microsoft.Extensions.Hosting": "6.0.1",
+          "MongoDB.Driver": "2.21.0",
           "Serilog": "3.0.1",
           "Serilog.AspNetCore": "7.0.0",
           "Serilog.Sinks.Console": "4.1.0"
@@ -744,18 +744,12 @@
         }
       },
       "LogCentralizer.Backend.Worker.Domain/1.0.0": {
-        "runtime": {
-          "LogCentralizer.Backend.Worker.Domain.dll": {}
-        }
-      },
-      "LogCentralizer.Backend.Worker.Repository.MongoDB/1.0.0": {
         "dependencies": {
-          "LogCentralizer.Backend.Worker.Domain": "1.0.0",
-          "MongoDB.Driver": "2.21.0",
+          "MongoDB.Bson": "2.21.0",
           "Newtonsoft.Json": "13.0.3"
         },
         "runtime": {
-          "LogCentralizer.Backend.Worker.Repository.MongoDB.dll": {}
+          "LogCentralizer.Backend.Worker.Domain.dll": {}
         }
       }
     }
@@ -1243,11 +1237,6 @@
       "hashPath": "zstdsharp.port.0.6.2.nupkg.sha512"
     },
     "LogCentralizer.Backend.Worker.Domain/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "LogCentralizer.Backend.Worker.Repository.MongoDB/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

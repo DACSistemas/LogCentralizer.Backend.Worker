@@ -309,6 +309,10 @@
       "LogCentralizer.Backend.Worker.Domain/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "MongoDB.Bson": "2.21.0",
+          "Newtonsoft.Json": "13.0.3"
+        },
         "compile": {
           "bin/placeholder/LogCentralizer.Backend.Worker.Domain.dll": {}
         },

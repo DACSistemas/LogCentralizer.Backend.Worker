@@ -1262,26 +1262,15 @@
       "LogCentralizer.Backend.Worker.Domain/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
-        "compile": {
-          "bin/placeholder/LogCentralizer.Backend.Worker.Domain.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/LogCentralizer.Backend.Worker.Domain.dll": {}
-        }
-      },
-      "LogCentralizer.Backend.Worker.Repository.MongoDB/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
-          "LogCentralizer.Backend.Worker.Domain": "1.0.0",
-          "MongoDB.Driver": "2.21.0",
+          "MongoDB.Bson": "2.21.0",
           "Newtonsoft.Json": "13.0.3"
         },
         "compile": {
-          "bin/placeholder/LogCentralizer.Backend.Worker.Repository.MongoDB.dll": {}
+          "bin/placeholder/LogCentralizer.Backend.Worker.Domain.dll": {}
         },
         "runtime": {
-          "bin/placeholder/LogCentralizer.Backend.Worker.Repository.MongoDB.dll": {}
+          "bin/placeholder/LogCentralizer.Backend.Worker.Domain.dll": {}
         }
       }
     }
@@ -3144,22 +3133,17 @@
       "type": "project",
       "path": "../LogCentralizer.Backend.Worker.Domain/LogCentralizer.Backend.Worker.Domain.csproj",
       "msbuildProject": "../LogCentralizer.Backend.Worker.Domain/LogCentralizer.Backend.Worker.Domain.csproj"
-    },
-    "LogCentralizer.Backend.Worker.Repository.MongoDB/1.0.0": {
-      "type": "project",
-      "path": "../LogCentralizer.Backend.Worker.Repository.MongoDB/LogCentralizer.Backend.Worker.Repository.MongoDB.csproj",
-      "msbuildProject": "../LogCentralizer.Backend.Worker.Repository.MongoDB/LogCentralizer.Backend.Worker.Repository.MongoDB.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
       "LogCentralizer.Backend.Worker.Domain >= 1.0.0",
-      "LogCentralizer.Backend.Worker.Repository.MongoDB >= 1.0.0",
       "MassTransit >= 8.1.0",
       "MassTransit.MongoDb >= 8.1.0",
       "MassTransit.RabbitMQ >= 8.1.0",
       "Microsoft.Extensions.Configuration.Json >= 7.0.0",
       "Microsoft.Extensions.Hosting >= 6.0.1",
+      "MongoDB.Driver >= 2.21.0",
       "Serilog >= 3.0.1",
       "Serilog.AspNetCore >= 7.0.0",
       "Serilog.Sinks.Console >= 4.1.0"
@@ -3196,9 +3180,6 @@
           "projectReferences": {
             "D:\\Lotus\\LogCentralizer.Backend.Worker\\LogCentralizer.Backend.Worker.Domain\\LogCentralizer.Backend.Worker.Domain.csproj": {
               "projectPath": "D:\\Lotus\\LogCentralizer.Backend.Worker\\LogCentralizer.Backend.Worker.Domain\\LogCentralizer.Backend.Worker.Domain.csproj"
-            },
-            "D:\\Lotus\\LogCentralizer.Backend.Worker\\LogCentralizer.Backend.Worker.Repository.MongoDB\\LogCentralizer.Backend.Worker.Repository.MongoDB.csproj": {
-              "projectPath": "D:\\Lotus\\LogCentralizer.Backend.Worker\\LogCentralizer.Backend.Worker.Repository.MongoDB\\LogCentralizer.Backend.Worker.Repository.MongoDB.csproj"
             }
           }
         }
@@ -3232,6 +3213,10 @@
           "Microsoft.Extensions.Hosting": {
             "target": "Package",
             "version": "[6.0.1, )"
+          },
+          "MongoDB.Driver": {
+            "target": "Package",
+            "version": "[2.21.0, )"
           },
           "Serilog": {
             "target": "Package",
