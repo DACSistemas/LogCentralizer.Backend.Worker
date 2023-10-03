@@ -64,15 +64,14 @@ namespace LogCentralizer.Backend.Worker
                 if (!string.IsNullOrEmpty(context.Message.Room) && !string.IsNullOrEmpty(context.Message.Category))
                 {
                     var builderRoomRole = Builders<RoomRole>.Filter;
-                    var mongoRoomFilter = FilterDefinition<RoomRole>.Empty;
-                    var queryExpression = new BsonRegularExpression(new Regex(context.Message.Room, RegexOptions.IgnoreCase));
-                    mongoRoomFilter &= builderRoomRole.Regex("room", queryExpression);
 
-                    var queryRoomRoleCategoryExpression = new BsonRegularExpression(new Regex(context.Message.Category, RegexOptions.IgnoreCase));
-                    mongoRoomFilter &= builderRoomRole.Regex("category", queryExpression);
+                    // Crie um filtro para verificar se já existe um registro com a mesma combinação de Room e Category
+                    var filter = builderRoomRole.Eq("Room", context.Message.Room) &
+                                 builderRoomRole.Eq("Category", context.Message.Category);
 
-                    var haveRegistredRoom = await roomRoleRepository.Find(mongoRoomFilter).FirstOrDefaultAsync();
-                    if (haveRegistredRoom is null)
+                    var existingRoomRole = await roomRoleRepository.Find(filter).FirstOrDefaultAsync();
+
+                    if (existingRoomRole == null)
                     {
                         try
                         {
@@ -84,9 +83,9 @@ namespace LogCentralizer.Backend.Worker
                             });
                         }
                         catch { }
-                        
                     }
                 }
+
 
 
                 int? userIdInt = null;
