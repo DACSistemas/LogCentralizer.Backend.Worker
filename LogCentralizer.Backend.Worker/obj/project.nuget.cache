@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "7mQzaY6erFT0AWS3WAC1THET9JRZ5l6wYuEXjE3lxdDC66AnYpaEsvUN/UQyaxmwocqGSUy1FJTESWVDZaRVuA==",
+  "dgSpecHash": "qjSbbiSEr5vLQ/A/PQxGc3FCAP4UVn0YcEjt6kh8JIKntbxqbYa9Mo44XuqHfcC0rcFcpBWeCzLEPSVrvmh5Tg==",
   "success": true,
-  "projectFilePath": "D:\\Lotus\\LogCentralizer.Backend.Worker\\LogCentralizer.Backend.Worker\\LogCentralizer.Backend.Worker.csproj",
+  "projectFilePath": "D:\\Projects\\FiveM\\LogCentralizer.Backend.Worker\\LogCentralizer.Backend.Worker\\LogCentralizer.Backend.Worker.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\dicat\\.nuget\\packages\\awssdk.core\\3.7.100.14\\awssdk.core.3.7.100.14.nupkg.sha512",
     "C:\\Users\\dicat\\.nuget\\packages\\awssdk.securitytoken\\3.7.100.14\\awssdk.securitytoken.3.7.100.14.nupkg.sha512",

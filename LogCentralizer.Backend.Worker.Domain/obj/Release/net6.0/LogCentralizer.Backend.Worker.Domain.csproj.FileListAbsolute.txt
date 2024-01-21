@@ -10,3 +10,16 @@ D:\Lotus\LogCentralizer.Backend.Worker\LogCentralizer.Backend.Worker.Domain\obj\
 D:\Lotus\LogCentralizer.Backend.Worker\LogCentralizer.Backend.Worker.Domain\obj\Release\net6.0\LogCentralizer.Backend.Worker.Domain.pdb
 D:\Lotus\LogCentralizer.Backend.Worker\LogCentralizer.Backend.Worker.Domain\obj\Release\net6.0\ref\LogCentralizer.Backend.Worker.Domain.dll
 D:\Lotus\LogCentralizer.Backend.Worker\LogCentralizer.Backend.Worker.Domain\obj\Release\net6.0\LogCentralizer.Backend.Worker.Domain.csproj.AssemblyReference.cache
+D:\Projects\FiveM\LogCentralizer.Backend.Worker\LogCentralizer.Backend.Worker.Domain\bin\Release\net6.0\LogCentralizer.Backend.Worker.Domain.deps.json
+D:\Projects\FiveM\LogCentralizer.Backend.Worker\LogCentralizer.Backend.Worker.Domain\bin\Release\net6.0\LogCentralizer.Backend.Worker.Domain.dll
+D:\Projects\FiveM\LogCentralizer.Backend.Worker\LogCentralizer.Backend.Worker.Domain\bin\Release\net6.0\LogCentralizer.Backend.Worker.Domain.pdb
+D:\Projects\FiveM\LogCentralizer.Backend.Worker\LogCentralizer.Backend.Worker.Domain\obj\Release\net6.0\LogCentralizer.Backend.Worker.Domain.csproj.AssemblyReference.cache
+D:\Projects\FiveM\LogCentralizer.Backend.Worker\LogCentralizer.Backend.Worker.Domain\obj\Release\net6.0\LogCentralizer.Backend.Worker.Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projects\FiveM\LogCentralizer.Backend.Worker\LogCentralizer.Backend.Worker.Domain\obj\Release\net6.0\LogCentralizer.Backend.Worker.Domain.AssemblyInfoInputs.cache
+D:\Projects\FiveM\LogCentralizer.Backend.Worker\LogCentralizer.Backend.Worker.Domain\obj\Release\net6.0\LogCentralizer.Backend.Worker.Domain.AssemblyInfo.cs
+D:\Projects\FiveM\LogCentralizer.Backend.Worker\LogCentralizer.Backend.Worker.Domain\obj\Release\net6.0\LogCentralizer.Backend.Worker.Domain.csproj.CoreCompileInputs.cache
+D:\Projects\FiveM\LogCentralizer.Backend.Worker\LogCentralizer.Backend.Worker.Domain\obj\Release\net6.0\LogCentralizer.Backend.Worker.Domain.sourcelink.json
+D:\Projects\FiveM\LogCentralizer.Backend.Worker\LogCentralizer.Backend.Worker.Domain\obj\Release\net6.0\LogCentralizer.Backend.Worker.Domain.dll
+D:\Projects\FiveM\LogCentralizer.Backend.Worker\LogCentralizer.Backend.Worker.Domain\obj\Release\net6.0\refint\LogCentralizer.Backend.Worker.Domain.dll
+D:\Projects\FiveM\LogCentralizer.Backend.Worker\LogCentralizer.Backend.Worker.Domain\obj\Release\net6.0\LogCentralizer.Backend.Worker.Domain.pdb
+D:\Projects\FiveM\LogCentralizer.Backend.Worker\LogCentralizer.Backend.Worker.Domain\obj\Release\net6.0\ref\LogCentralizer.Backend.Worker.Domain.dll

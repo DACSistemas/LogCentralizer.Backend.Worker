@@ -78,25 +78,29 @@ IHost host = Host.CreateDefaultBuilder(args)
 
 static void LogCitySettings(Dictionary<string, CitySettings> citySettings)
 {
-        Log.Information(@"
-         _   ___     ___          |===================================================|
-        | | / \ \   / / \         | - Módulo desenvolvido por Diego Ansanello Cataldi |
-     _  | |/ _ \ \ / / _ \        | - Contato: (19) 9.7419-6348                       |
-    | |_| / ___ \ V / ___ \       | - Discord: javascripter                           |
-     \___/_/   \_\_/_/   \_\      |===================================================|
+    Log.Information(@"
+         _   ___     ___          |========================================================|
+        | | / \ \   / / \         | - Módulo desenvolvido por Diego Ansanello Cataldi      |
+     _  | |/ _ \ \ / / _ \        | - Contato: (19) 9.7419-6348                            |
+    | |_| / ___ \ V / ___ \       | - Discord: javascripter                                |
+     \___/_/   \_\_/_/   \_\      |========================================================|
     ");
-    Thread.Sleep(10000);
+    Thread.Sleep(2000);
 
     Log.Information("{Queues}:", "Filas Encontradas");
     foreach (var settings in citySettings)
     {
-        Log.Information("|-------------------------------------------------|");
-        Log.Information("| City Name: {CityName}{space} |", settings.Value.CityName, String.Concat(Enumerable.Repeat(" ", (36 - settings.Value.CityName.Length))));
-        Log.Information("| RabbitMQ queue name: {QueueName}{space} |", settings.Key, String.Concat(Enumerable.Repeat(" ", (26 - settings.Key.Length))));
-        //Log.Information("| RabbitMQ Messages in queue: {MessageCount}{space}|", citySettings.MessageCount, String.Concat(Enumerable.Repeat(" ", (45 - citySettings.MessageCount.ToString().Length))));
-        //Log.Information("| RabbitMQ Consumers: {ConsumerCount}{space}|", citySettings.ConsumerCount, String.Concat(Enumerable.Repeat(" ", (53 - citySettings.ConsumerCount.ToString().Length))));
-        Log.Information("|-------------------------------------------------|");
+        int desiredLength = 60;
+        string paddedQueueName = settings.Key.Length <= desiredLength
+            ? settings.Key
+            : settings.Key.Substring(0, desiredLength);
+
+        
+        Log.Information($"City Name: {settings.Value.CityName}");
+        Log.Information($"RabbitMQ queue name: {paddedQueueName}");
+        
     }
+    //Log.Information(Environment.NewLine);
 }
 
 await host.RunAsync();

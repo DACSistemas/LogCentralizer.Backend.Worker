@@ -3150,27 +3150,30 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\dicat\\.nuget\\packages\\": {}
+    "C:\\Users\\dicat\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Lotus\\LogCentralizer.Backend.Worker\\LogCentralizer.Backend.Worker\\LogCentralizer.Backend.Worker.csproj",
+      "projectUniqueName": "D:\\Projects\\FiveM\\LogCentralizer.Backend.Worker\\LogCentralizer.Backend.Worker\\LogCentralizer.Backend.Worker.csproj",
       "projectName": "LogCentralizer.Backend.Worker",
-      "projectPath": "D:\\Lotus\\LogCentralizer.Backend.Worker\\LogCentralizer.Backend.Worker\\LogCentralizer.Backend.Worker.csproj",
+      "projectPath": "D:\\Projects\\FiveM\\LogCentralizer.Backend.Worker\\LogCentralizer.Backend.Worker\\LogCentralizer.Backend.Worker.csproj",
       "packagesPath": "C:\\Users\\dicat\\.nuget\\packages\\",
-      "outputPath": "D:\\Lotus\\LogCentralizer.Backend.Worker\\LogCentralizer.Backend.Worker\\obj\\",
+      "outputPath": "D:\\Projects\\FiveM\\LogCentralizer.Backend.Worker\\LogCentralizer.Backend.Worker\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
         "C:\\Users\\dicat\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 18.1.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\DevExpress 18.1\\Components\\System\\Components\\Packages": {},
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
@@ -3178,8 +3181,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "D:\\Lotus\\LogCentralizer.Backend.Worker\\LogCentralizer.Backend.Worker.Domain\\LogCentralizer.Backend.Worker.Domain.csproj": {
-              "projectPath": "D:\\Lotus\\LogCentralizer.Backend.Worker\\LogCentralizer.Backend.Worker.Domain\\LogCentralizer.Backend.Worker.Domain.csproj"
+            "D:\\Projects\\FiveM\\LogCentralizer.Backend.Worker\\LogCentralizer.Backend.Worker.Domain\\LogCentralizer.Backend.Worker.Domain.csproj": {
+              "projectPath": "D:\\Projects\\FiveM\\LogCentralizer.Backend.Worker\\LogCentralizer.Backend.Worker.Domain\\LogCentralizer.Backend.Worker.Domain.csproj"
             }
           }
         }
@@ -3247,7 +3250,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }
